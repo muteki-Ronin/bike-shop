@@ -171,7 +171,7 @@ ul {
   flex-shrink: 0;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .product-card__body {
@@ -212,6 +212,7 @@ ul {
 .product-card__img_big {
   height: 100%;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 .product-card__body_big {
@@ -306,12 +307,84 @@ ul {
   margin-top: 0;
   margin-bottom: 48px;
   font-size: 20px;
+}
 
+/* Callback */
+.callback {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.callback::before {
+  content: "";
+  display: block;
+  background-image: url(../img/callback_img.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.callback__right {
+  padding: 72px 50px;
+  color: white;
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url(../img/callback_img_right.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.callback__title {
+  font-size: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.callback__desc {
+  margin-top: 0;
+  max-width: 424px;
+  margin-bottom: 26px;
+  font-size: 20px;
+}
+
+/* Сatalog */
+.catalog {
+  padding: 80px 0;
+}
+
+.catalog__subtitle {
+  margin-bottom: 60px;
+}
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0;
+}
+
+.catalog__item_big {
+  grid-column: span 2;
+}
+
+.catalog__card {
+  height: 100%;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 23px 15px;
+  background-color: var(--border-color);
+}
+
+.footer__logo {
+  opacity: 50%;
 }
 
 /* Media */
 
-@media (max-width: 740px) {
+@media (max-width: 920px) {
 /* Callback form */
 .callback-form {
   flex-direction: column;
@@ -390,6 +463,34 @@ ul {
 
 .hero__title {
   font-size: 28px;
+}
+
+/* Callback */
+.callback {
+  display: block;
+}
+
+.callback__right {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.callback::before {
+  display: none;
+}
+
+/* Сatalog */
+.catalog {
+  padding: 40px 0;
+}
+
+.catalog__subtitle {
+  margin-bottom: 30px;
+}
+
+.catalog__list {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
 }
